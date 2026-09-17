@@ -1,0 +1,4 @@
+interface:
+  display_name: "Education & Consulting Design"
+  short_description: "Website layouts and journeys ready for a builder"
+  default_prompt: "Use $education-consulting-design to create a barebone website design and complete visitor journey for my education, consulting, or info-product business."
