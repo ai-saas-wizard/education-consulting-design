@@ -26,14 +26,6 @@ The original guide is retained unchanged through Part VIII and its final princip
 
 Omit, merge, or reorder blocks based on the actual decision. A small offer should not inherit a 20-section funnel just because a reference has one.
 
-## Proposed starting tokens, not measured source styles
+## Visual tokens
 
-| Role | Editorial coaching | Product-led academy | Expert education |
-|---|---|---|---|
-| Background / surface | #F7F4ED / #EAE5DC | #111111 / #1C1C1C | #FFFFFF / #F3F5F8 |
-| Text / secondary | #242421 / #5D5B55 | #FAFAF7 / #BDBDB7 | #1E2941 / #526071 |
-| Primary action | #343C32 with white | #C53C17 with white | #A94518 with white |
-| Display type direction | generous modern sans; optional restrained serif accent | condensed sans for short headings | readable sans; occasional serif metric |
-| Photo treatment | warm natural light, human context | genuine product UI and instructor portraits | teaching, feedback samples, credible portraits |
-
-These are optional starting points. Check contrast for the actual text size, select available/licensed fonts, and replace tokens to fit the client's brand. A concrete handoff should name a font or system stack, not leave 'modern sans' unresolved.
+This file does not set colors or type. Use the measured system for the owner's chosen reference in [visual systems](visual-systems.md). The guide's palettes and typography notes (Fit Pro CEO, Founder Funnel, Consulting.com, and others) describe other brands' sites. They are not a style source for this skill. Check contrast for the actual text sizes.

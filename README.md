@@ -13,8 +13,20 @@ It defines the layout, visual system, responsive behavior, content slots, and wh
 | `design-handoff.md` | Chosen visual direction, page inventory, desktop/mobile wireframes, design tokens, section specifications, component states, and acceptance criteria |
 | `journey-map.md` | Navigation, CTA destinations, application/booking or enrollment flow, form requirements, success/error states, and unresolved dependencies |
 | `asset-manifest.md` | Required images and media, aspect ratios, crop guidance, source and rights status, and missing assets |
+| `brand/` | Logo set (primary, reversed, mark), favicon and social share image, generated when you don't have them, plus the concepts and prompts used |
+| `design-tokens.css` | Every color, font, size, spacing and radius as CSS variables for the builder |
+| `design-preview.html` | A static, nonfunctional preview of the first screen and key sections, built from the chosen reference's measured tokens |
+| `design-references/` | Copies of the reference screenshots each section is modeled on, so the builder can match them (not for deployment) |
 
-“Barebone” means a resolved design structure with clear content and asset slots. It does not mean an empty template. A static visual prototype can be added when requested; the default deliverables are design documents with wireframe diagrams.
+“Barebone” means a resolved design structure with clear content and asset slots. It does not mean an empty template.
+
+## How it works
+
+1. **Interview.** The skill asks about your offer and journey gaps, then always about design: which reference look, how closely to follow it, what to leave out, your brand assets, the imagery you have, and must-haves. Say “you decide” to accept its recommendations.
+2. **Reference system.** It loads the measured fonts, colors, spacing and components of the look you chose ([visual systems](references/visual-systems.md)) and views the reference frame for every section it designs.
+3. **Brand assets.** If you have no logo, it asks a few logo questions, proposes three concepts in the chosen style and builds your pick as SVG with a favicon and social image. On Codex it can also explore symbols with the built-in image generator. On Claude without an image tool, it draws the SVG and gives you a ready prompt for ChatGPT, Ideogram or Recraft.
+4. **Preview and compare.** It builds `design-preview.html`, screenshots it at the reference capture size, fixes differences against the reference frames, and asks for your approval.
+5. **Handoff.** It writes the handoff, journey map and asset manifest. Builder rules at the top of the handoff tell the builder to keep the look intact.
 
 ## Install
 
@@ -54,7 +66,7 @@ No API keys, package installation, or paid connector is required for the skill i
 ```text
 Use $education-consulting-design to design a website for my executive
 coaching business. The audience is first-time managers. The main action
-is applying for a consultation. Use a warm editorial direction.
+is applying for a consultation. Follow the Aligned look closely.
 Create the design handoff, journey map, and asset manifest for our builder.
 ```
 
@@ -62,12 +74,12 @@ For a course or membership:
 
 ```text
 Use $education-consulting-design for an online public-speaking academy.
-We sell a self-paced course with weekly group feedback. Create a product-led
-website design with curriculum, instructor credibility, pricing, enrollment,
+We sell a self-paced course with weekly group feedback. Follow the Launchpad
+look with curriculum, instructor credibility, pricing, enrollment,
 and access-confirmation states. Mark missing facts instead of inventing them.
 ```
 
-Useful inputs include your audience, offer, traffic source, primary action, brand assets, actual proof, prices/terms, and existing funnel decisions. Supply what you have; the skill records assumptions and dependencies for the rest.
+Useful inputs include your audience, offer, traffic source, primary action, brand assets, actual proof, prices/terms, existing funnel decisions, and the reference look you want. The skill asks about anything missing before it designs. Unknown facts you can't answer yet are recorded as dependencies, not invented.
 
 ## Pair it with a builder
 
@@ -97,11 +109,11 @@ Invoking the design skill alone does not authorize publishing, creating provider
 
 ## Reference library
 
-The skill includes 62 desktop screenshots, two contact sheets, a local HTML gallery, section descriptions, conversion research, and public visitor-journey observations.
+The skill includes 62 desktop screenshots, two contact sheets, a local HTML gallery, measured visual systems (fonts, colors, spacing and components taken from each reference's CSS), section descriptions, conversion research, and public visitor-journey observations.
 
 | Reference | What it contributes |
 | --- | --- |
-| [Aligned Fitness](https://www.alignedfitnesscoaching.org/) | Warm editorial coaching, founder photography, proof, team, and application flow |
+| [Aligned Fitness](https://www.alignedfitnesscoaching.org/) | Soft-minimal coaching look (Inter Tight and DM Sans on warm ivory), founder photography, proof, team, and application flow |
 | [Digital Launchpad](https://join.digital-launchpad.com/) | Dark product-led presentation, course catalog, membership progression, pricing, and checkout entry |
 | [Metabolic Makeover Academy](https://www.metabolicmakeoveracademy.org/) | Engagement method, delivery details, fit criteria, and qualification flow |
 | [IELTS Advantage](https://www.ieltsadvantage.com/) | Expert-led education, course purchase, diagnostic, and free-learning paths |
@@ -129,11 +141,13 @@ education-consulting-design/
 ├── agents/
 │   └── openai.yaml
 └── references/
+    ├── brand-assets.md
     ├── conversion-principles.md
     ├── handoff-contract.md
     ├── high-converting-landing-page.md
     ├── reference-atlas.md
     ├── reference-journeys.md
+    ├── visual-systems.md
     └── screenshots/
         ├── gallery.html
         ├── aligned-contact-sheet.jpg
@@ -143,7 +157,7 @@ education-consulting-design/
 
 ## Design boundaries
 
-- Adapt structure and hierarchy; do not copy competitors' branding or present their results as yours.
+- Match the chosen reference's visual system (type, color roles, spacing, components). Never reuse its logo, name, photos, copy or results.
 - Use genuine client evidence. Missing testimonials, credentials, prices, policies, and outcomes remain visible dependencies.
 - Map every designed interaction, including error, back, cancellation, confirmation, and access-help states where relevant.
 - Separate observed behavior, publisher claims, proposed behavior, and unknowns.
@@ -151,7 +165,13 @@ education-consulting-design/
 
 ## Validation and contributions
 
-The skill passed Codex's skill metadata validator. Local relative documentation links and packaged files were checked. This does not certify design quality, conversion performance, or every agent integration.
+The skill passed Codex's skill metadata validator. Local relative documentation links and packaged files were checked.
+
+On 28 September 2026 the previous and current versions were scenario-tested with Claude subagents on the same briefs.
+- **Previous version:** skipped the design questions and chose its own "original" palette and fonts.
+- **Current version:** interviewed the owner first, reproduced the chosen reference's tokens (Aligned and Launchpad), compared screenshots against the reference frames, and generated an SVG logo set.
+
+Codex's image-generation path and the IELTS system were not exercised. None of this certifies design quality, conversion performance, or every agent integration.
 
 Issues and focused pull requests are welcome. Include the use case, proposed change, and an example of how it improves the resulting handoff. For reference updates, record the inspection date, source URL, and access limits. Do not contribute credentials, private client material, or fabricated results.
 

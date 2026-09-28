@@ -4,14 +4,22 @@ Compatible with the inspected `website-generation/references/design-handoff.md` 
 
 ## design-handoff.md
 
-1. **Status and brief:** business, audience, offer, traffic context, main conversion, chosen direction, assumptions, source references, scope exclusions.
+Open the file with this block, filled in:
+
+> **Builder rules.** This design reproduces the *[reference]* visual system with the owner-approved changes listed below. Implement the tokens exactly: the same font families, weights, sizes, colors, spacing and corners. Use `design-tokens.css` and the logo files in `brand/` as delivered. Before building each section, open its model frame in `design-references/`. Screenshot your build at 1265×712 and compare it with the frame. Don't restyle with a different aesthetic or another design skill's defaults, and don't substitute fonts. Ask the owner before changing the look.
+
+1. **Status and brief:** business, audience, offer, traffic context, main conversion, reference look and closeness level, the owner's interview answers, assumptions, source references, scope exclusions.
 2. **Page inventory:** route, page job, entry source, main action, next route/state. Include needed application, booking, confirmation, checkout, access-help, resource, and policy surfaces; do not add pages gratuitously.
-3. **Visual system:** specific color roles/hex, typography/fallbacks/weights/sizes/line heights, spacing scale, maximum width, columns/gutters, border/radius, image ratios, components, interaction and focus treatments. State proposed breakpoints and why elements reflow.
-4. **Per-page wireframes:** desktop and mobile diagrams with labeled content areas, realistic relative widths, hierarchy, and section order. A diagram plus tokens and section specs is the minimum concrete design, even without a rendered mockup.
-5. **Per-section table:** ID, visitor question/job, draft headline and content slots, desktop layout, mobile layout, media dimensions/crop, proof source, CTA label/destination, and interaction states. Mark each copy slot `supplied`, `draft`, or `missing`.
-6. **Reusable components:** navigation, button hierarchy, proof card, curriculum row, FAQ, form field/error, loading, empty, confirmation, and any offer-specific component.
+3. **Visual system:** the chosen token block from [visual systems](visual-systems.md), or an equivalent block measured from the owner's own reference. Include color roles/hex, font families with Google Fonts names and fallbacks, weights/sizes/line heights, spacing scale, maximum width, columns/gutters, border/radius, image ratios, components, interaction and focus treatments. Then a **borrow / change / avoid** table: what is taken from the reference, each owner-approved change beside the value it replaces, and what the owner excluded. Include logo usage rules from [brand assets](brand-assets.md) and point to `design-tokens.css` as the source of every value. State proposed breakpoints and why elements reflow.
+4. **Per-page wireframes:** desktop and mobile diagrams with labeled content areas, realistic relative widths, hierarchy, and section order. The diagrams, tokens, section specs and `design-preview.html` together are the concrete design.
+5. **Per-section table:** ID, visitor question/job, **model frame** (the reference screenshot it follows), draft headline and content slots, desktop layout, mobile layout, media dimensions/crop, proof source, CTA label/destination, and interaction states. Mark each copy slot `supplied`, `draft`, or `missing`.
+6. **Reusable components:** navigation, button hierarchy, proof card, curriculum row, FAQ, form field/error, loading, empty, confirmation, and any offer-specific component, each styled as in the reference.
 7. **Responsive/accessibility behavior:** evaluate proposed layouts at approximately 1440, 768, and 390px; these are design review widths, not required device targets. Specify keyboard/focus, touch controls, heading order, labels, contrast, motion, captions, and sticky element clearance.
-8. **Dependencies and acceptance:** missing facts/assets, consequential decisions for the owner, concrete visual/journey acceptance checks, and handoff files.
+8. **Dependencies and acceptance:** missing facts/assets, consequential decisions for the owner, concrete visual/journey acceptance checks, and handoff files. Visual acceptance: side-by-side screenshots of the build and each model frame read as the same design family, and the generic-output check in visual systems passes.
+
+## design-preview.html and design-references/
+
+`design-preview.html` is a static, nonfunctional page: the first screen plus two or three representative sections, built from the token block with real fonts, draft copy and labeled image placeholders. Label it in the page title and a small corner tag, not a banner inside the design. `design-references/` holds copies of every model frame cited in the section table. Keep it out of public or deployed folders; it is reference material, not production assets.
 
 Example wireframe language (adapt to actual content):
 
@@ -49,7 +57,7 @@ Do not confuse a CTA labeled 'Apply' with an application: inspect its actual tar
 
 ## asset-manifest.md
 
-For each asset: ID, section, intended subject, dimensions/aspect ratio, crop/focal point, source/path, alt-text intent, supplied/missing status, rights status, and acceptable fallback. List competitor screenshots separately as reference-only and exclude them from production assets. Never substitute synthetic before/after results for evidence.
+For each asset: ID, section, intended subject, dimensions/aspect ratio, crop/focal point, source/path, alt-text intent, supplied/missing status, rights status, and acceptable fallback. List the generated brand files in `brand/` with status `generated`, the prompt or method used, and rights "created for the owner; not trademark-cleared". A missing photograph or product screen gets a labeled placeholder with the reference's crop, corner radius and tone, plus a shot-list entry. Never fill it with an illustration, diagram, icon grid or invented interface. List competitor screenshots, including `design-references/`, separately as reference-only and exclude them from production assets. Never substitute synthetic before/after results for evidence.
 
 ## Integration notes for the builder
 

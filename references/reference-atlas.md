@@ -8,7 +8,9 @@ These are design observations and proposed adaptations, not evidence that a layo
 
 Open [the gallery](screenshots/gallery.html) or either contact sheet, then inspect individual frames at full resolution. Desktop viewport captures are approximately 1265×712. Consecutive frames overlap and large sections span multiple images; they are not clean section crops. Animation frames can show faded content and some lazy portraits did not load. Use the descriptions for these gaps. No mobile reference screenshots were taken; mobile adaptations below are design recommendations. Failed full-page captures were discarded because they distorted the layout.
 
-## Aligned — editorial coaching
+Exact tokens, fonts and section recipes, measured from each site's CSS, are in [visual systems](visual-systems.md). Several Aligned frames caught a scroll fade-in, so their text looks paler than on the live site.
+
+## Aligned — soft-minimal coaching
 
 [Contact sheet](screenshots/aligned-contact-sheet.jpg). Overall: ivory and warm gray surfaces, dark gray type, pill actions, small tracked eyebrows, large lightweight sans headings with selective heavier words. Founder and client photography anchors the page; generous pauses separate narrative sections. Header stays visible during scrolling. Adapt the human credibility and rhythm, while keeping the main offer/action explicit.
 
