@@ -4,6 +4,8 @@ Generate every design element the site needs here: logo set, favicon, social sha
 
 ## 1. Investigate before drawing
 
+A logo the owner supplies is used exactly as supplied. The advice in this file (clichés to avoid, what makes a good mark) applies only to logos you create, or refine because the owner asked. Never recommend retiring a supplied logo on your own initiative. If they're keeping a logo whose file you don't have yet, list the file as a dependency and show it in the preview as a labeled stand-in taken from their current site. Don't redraw it.
+
 If the owner has no logo, or wants theirs refined, ask these in the design round of the interview. Offer a recommendation for each:
 
 1. **Name as it should appear:** exact spelling and capitalization, plus any short descriptor ("Business Canvas" or "BusinessCanvas"; "Academy" or none).
@@ -15,7 +17,7 @@ If the owner has no logo, or wants theirs refined, ask these in the design round
 
 ## 2. Three concepts in the chosen system
 
-Write three distinct concepts. Each gets a name, the one idea behind it, its form, typeface and weight, color, and why it fits the reference system. Then ask the owner to pick one, or pick your recommendation if they said "you decide". Build every concept from the token block:
+Write three distinct concepts. Each gets a name, the one idea behind it, its form, typeface and weight, color, and why it fits the reference system. Describe them in words in `design-direction.md`, so the owner picks one when they approve the direction, or pick your recommendation if they said "you decide". Build every concept from the token block:
 
 | System | Wordmark direction | Mark direction |
 |---|---|---|
@@ -72,12 +74,14 @@ No text, no letters, no gradients, no shadows, no 3D, no mockups, no photographi
 
 ## 4. Files to deliver
 
+For a logo you create, deliver every file below. For a supplied logo, make only what the design uses (a mark cropped for the favicon, say). Don't recolor it for dark backgrounds without the owner's approval; list the missing version as a dependency instead.
+
 | File | Content |
 |---|---|
 | `brand/logo.svg` | Primary horizontal lockup on light backgrounds |
 | `brand/logo-reversed.svg` | Lockup for dark backgrounds |
 | `brand/logo-mark.svg` | Square mark or monogram (the wordmark initial if there is no symbol) |
-| `brand/favicon.svg` | Mark simplified for 16–32px; PNG 32, 180 and 512 exports if a converter is available |
+| `brand/favicon.svg` | Mark simplified for 16–32px; PNG 32, 180 and 512 exports if a converter is available (a headless-Chrome screenshot of the SVG at each size works) |
 | `brand/og-image.html` | 1200×630 social share layout from the tokens: logo, headline, background. Screenshot it to `og-image.png` if possible. |
 | `brand/logo-concepts.md` | The three concepts, the owner's pick, generation prompts used, usage rules |
 | `design-tokens.css` | Every token as CSS custom properties. `design-preview.html` imports it. |
